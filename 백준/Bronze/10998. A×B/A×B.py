@@ -1,4 +1,2 @@
-A, B = input().split()
-A = int(A)
-B = int(B)
-print(A * B)
+A,B = input().split()
+print(int(A)*int(B))
