@@ -1,32 +1,15 @@
-#1157 단어 공부
+S = input().upper()
 
-S = input()
+cnt = {char: 0 for char in set(S)}
 
-S = S.upper()
-
-unique_S = ''.join(set(S))
-
-cnt = {}
-
-for u_s in unique_S:
-    cnt[u_s] = 0
-    
 for s in S:
     cnt[s] += 1
-    
-li = []
-mx = []
 
-for key in cnt:
-    li.append(cnt[key])
-    
-for i in li:
-    if i == max(li):
-        mx.append(i)
-        
-if len(mx) > 1:
+max_cnt = max(cnt.values())
+
+max_chars = [char for char, count in cnt.items() if count == max_cnt]
+
+if len(max_chars) > 1:
     print('?')
 else:
-    for key in cnt:
-        if cnt[key] == mx[0]:
-            print(key)
+    print(max_chars[0])
