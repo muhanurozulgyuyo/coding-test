@@ -17,12 +17,11 @@ for _ in range(N):
     
 # 행렬의 합 계산
 result = []
-for i in range(N):
+for i in range(len(A)):
     temp = []
-    for j in range(M):
+    for j in range(len(A[i])):
         temp.append(A[i][j] + B[i][j])
     result.append(temp)
         
-# 결과 출력
-for row in result:
-    print(*row)
+for i in range(len(result)):
+    print(*result[i])
