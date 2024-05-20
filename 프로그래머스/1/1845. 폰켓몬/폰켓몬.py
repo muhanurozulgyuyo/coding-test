@@ -1,6 +1,11 @@
 def solution(nums):
-    unique_pokemons = set(nums)
+    answer = 0
     
-    max_selectable = len(nums) // 2
+    num_set = set(nums)
     
-    return min(len(unique_pokemons), max_selectable)
+    len_num = len(nums) // 2
+    
+    answer = min(len(num_set), len_num)
+    
+    return answer
+
