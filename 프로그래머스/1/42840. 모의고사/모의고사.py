@@ -38,12 +38,12 @@ def solution(answers):
 
     count = {'1': 0, '2': 0, '3': 0}
 
-    for key, value in pick.items():
+    for student, pattern in pick.items():
         for i in range(len(answers)):
-            if answers[i] == value[i % len(value)]:
-                count[key] += 1
+            if answers[i] == pattern[i % len(pattern)]:
+                count[student] += 1
 
     max_score = max(count.values())
-    answer = [int(key) for key, score in count.items() if score == max_score]
+    answer = [int(student) for student, score in count.items() if score == max_score]
 
     return answer
