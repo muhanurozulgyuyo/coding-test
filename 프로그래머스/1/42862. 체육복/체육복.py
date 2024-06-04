@@ -12,3 +12,33 @@ def solution(n, lost, reserve):
 
     # 체육복을 잃어버린 학생들을 제외한 학생 수를 반환합니다.
     return n - len(lost_set)
+
+# def solution(n, lost, reserve):
+#     yes = {}
+#     not_lost_reserve = []
+#     only_lost = []
+#     count = 0
+    
+#     for i in range(1, n + 1):
+#         if i in lost and i in reserve:
+#             yes[f"{i}"] = 1
+#         elif i in lost and i not in reserve:
+#             yes[f"{i}"] = 0
+#             only_lost.append(i)
+#         elif i not in lost and i not in reserve:
+#             yes[f"{i}"] = 1
+#         else:
+#             yes[f"{i}"] = 2
+#             not_lost_reserve.append(i)
+    
+#     for i in sorted(not_lost_reserve):
+#         if (i + 1) in only_lost:
+#             yes[f"{i + 1}"] = 1
+#         elif (i - 1) in only_lost:
+#             yes[f"{i - 1}"] = 1
+            
+#     for value in yes.values():
+#         if value <= 1:
+#             count += 1
+            
+#     return count
